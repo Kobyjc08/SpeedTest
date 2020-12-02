@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import db from './data/db.json';
+import { useCheckout } from './hooks/useCheckout';
 
 function App() {
+  console.log(db);
+  const total = useCheckout();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-200 px-4">
+      <h1>Cofi-test</h1>
+      {total}
     </div>
   );
 }
