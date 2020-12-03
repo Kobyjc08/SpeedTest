@@ -1,12 +1,34 @@
 import { useState } from 'react';
 
 const useCheckout = () => {
-  const [total, setTotal] = useState(5);
-  const res = {
-    scan: sku => {},
-    total: () => total,
+  const [total, setTotal] = useState(0);
+  const scan = sku => {
+    console.log(sku);
   };
-  return [scan, total];
+  let data = { total, scan };
+  return data;
 };
 
 export { useCheckout };
+
+/*
+  <Table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+    </tbody>
+  </Table>
+  )
+  */
